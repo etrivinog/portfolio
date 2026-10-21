@@ -8,6 +8,6 @@ Interactive, bilingual (EN / ES) portfolio built as a single self-contained `ind
 - Interactive iPhone simulator: digital wallet transfer, live theme switcher, animated Swift/TCA code
 - AI-augmented engineering metrics (Claude Code + GitHub Copilot CLI)
 - Interactive career timeline with tech filters
-- "Download CV" via print-optimized styles
+- "Download CV" downloads the PDF résumé (`Esteban-Trivino-CV-iOS-Developer.pdf`)
 
 Edit content in the `I18N` and `EXPERIENCE` objects inside `index.html`.
