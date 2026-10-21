@@ -2,7 +2,7 @@
 
 Interactive, bilingual (EN / ES) portfolio built as a single self-contained `index.html`, inspired by Apple's Human Interface Guidelines.
 
-**Live:** https://etrivinog.github.io/portfolio/
+**Live:** https://estebantrivino.com/
 
 - Dynamic Island header with availability status, email and EN | ES switcher
 - Interactive iPhone simulator: digital wallet transfer, live theme switcher, animated Swift/TCA code
