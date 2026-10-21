@@ -326,7 +326,8 @@
     .w-card small { font-size: 11px; opacity: .75; font-weight: 600; }
     .w-balance { font-size: 25px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin: 2px 0 6px; transition: transform .4s var(--spring); }
     .w-balance.pulse { transform: scale(1.06); }
-    .w-card-foot { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; opacity: .8; }
+    .w-card-foot { display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 600; opacity: .8; }
+    .w-demo { font-size: 9px; letter-spacing: .12em; padding: 2px 7px; border-radius: 999px; border: 1px solid currentColor; }
     .w-label { font-size: 11px; font-weight: 600; color: #8e8e93; margin: 12px 0 7px; text-transform: uppercase; letter-spacing: .06em; }
     .w-contacts { display: flex; justify-content: space-between; }
     .w-contact { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10.5px; color: #c7c7cc; width: 56px; }
@@ -703,15 +704,15 @@
                 <div class="app wallet active" id="app-wallet" data-status="light">
                   <div class="w-head">
                     <div class="w-brands" id="wBrands">
-                      <button type="button" class="active" data-brand="lulo">Lulo</button>
-                      <button type="button" data-brand="izipay">Izipay</button>
+                      <button type="button" class="active" data-brand="lulo">COP</button>
+                      <button type="button" data-brand="izipay">PEN</button>
                     </div>
                     <span class="w-icon-btn"><i data-lucide="bell"></i></span>
                   </div>
                   <div class="w-card">
                     <small data-i18n="w.balance">Available balance</small>
                     <div class="w-balance" id="wBalance">$ 4.250.000</div>
-                    <div class="w-card-foot"><span id="wBank">Lulo Bank</span><span id="wAcct">•••• 4821</span></div>
+                    <div class="w-card-foot"><span id="wBank">Demo Wallet</span><span id="wAcct" class="w-demo">DEMO</span></div>
                   </div>
                   <div class="w-label" data-i18n="w.sendto">Send to</div>
                   <div class="w-contacts" id="wContacts"></div>
@@ -793,7 +794,7 @@
               </div>
             </div>
           </div>
-          <p class="sim-caption" id="simCaption" data-i18n="sim.cap.wallet">Interactive demo: pick a contact, type an amount and send — inspired by the Lulo Bank &amp; Izipay wallets I've built.</p>
+          <p class="sim-caption" id="simCaption" data-i18n="sim.cap.wallet">Simulated UI demo (no real money or accounts): pick a contact, type an amount and send — inspired by the digital wallets I've built.</p>
         </div>
       </div>
     </section>
@@ -890,7 +891,7 @@
               </div>
 
               <div class="terminal">
-                <div class="term-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span>~/lulo-ios — copilot</span></div>
+                <div class="term-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span>~/wallet-ios — copilot</span></div>
                 <div class="term-body" id="termBody"></div>
               </div>
             </div>
@@ -1056,7 +1057,7 @@
       'stat.wallets': 'fintech wallets shipped',
       'sim.tab.wallet': 'Wallet',
       'sim.tab.theme': 'Themes',
-      'sim.cap.wallet': "Interactive demo: pick a contact, type an amount and send — inspired by the Lulo Bank & Izipay wallets I've built.",
+      'sim.cap.wallet': "Simulated UI demo (no real money or accounts): pick a contact, type an amount and send — inspired by the digital wallets I've built.",
       'sim.cap.theme': 'Live ThemeManager demo inspired by Carnival Cruise Line: switch between Ocean Blue and Sunset in real time.',
       'sim.cap.code': 'A TCA reducer like the ones I write daily at Cricut — state, actions, dependencies and async effects.',
       'w.balance': 'Available balance',
@@ -1162,7 +1163,7 @@
       'stat.wallets': 'billeteras fintech entregadas',
       'sim.tab.wallet': 'Billetera',
       'sim.tab.theme': 'Temas',
-      'sim.cap.wallet': 'Demo interactiva: elige un contacto, escribe un monto y envía — inspirada en las billeteras Lulo Bank e Izipay que he construido.',
+      'sim.cap.wallet': 'Demo simulada de UI (sin dinero ni cuentas reales): elige un contacto, escribe un monto y envía — inspirada en las billeteras digitales que he construido.',
       'sim.cap.theme': 'Demo en vivo de ThemeManager inspirada en Carnival Cruise Line: alterna entre Ocean Blue y Sunset en tiempo real.',
       'sim.cap.code': 'Un reducer TCA como los que escribo a diario en Cricut — estado, acciones, dependencias y efectos asíncronos.',
       'w.balance': 'Saldo disponible',
@@ -1548,8 +1549,8 @@ struct TransferFeature {
     /* ---------------- Wallet app ---------------- */
     const wallet = (function () {
       const BRANDS = {
-        lulo: { name: 'Lulo Bank', currency: 'COP', locale: 'es-CO', frac: 0, acct: '•••• 4821', balance: 4250000 },
-        izipay: { name: 'Izipay', currency: 'PEN', locale: 'es-PE', frac: 2, acct: '•••• 1307', balance: 3850 }
+        lulo: { name: 'Demo Wallet', currency: 'COP', locale: 'es-CO', frac: 0, acct: 'DEMO', balance: 4250000 },
+        izipay: { name: 'Demo Wallet', currency: 'PEN', locale: 'es-PE', frac: 2, acct: 'DEMO', balance: 3850 }
       };
       const CONTACTS = [
         { n: 'Ana', c: '#ff9f0a' }, { n: 'Luis', c: '#64d2ff' }, { n: 'Sofía', c: '#bf5af2' }, { n: 'Mateo', c: '#30d158' }
